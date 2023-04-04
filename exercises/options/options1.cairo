@@ -1,6 +1,7 @@
 // options1.cairo
 // Execute `starklings hint options1` or use the `hint` watch subcommand for a hint.
 
+
 use option::OptionTrait;
 
 // This function returns how much icecream there is left in the fridge.
@@ -11,14 +12,22 @@ fn maybe_icecream(time_of_day: usize) -> Option<usize> {
     // The Option output should gracefully handle cases where time_of_day > 23.
     // TODO: Complete the function body - remember to return an Option!
 
+    // if time_of_day < 22_usize {
+    //     Option::Some(5_usize)
+    // } else if time_of_day < 24_usize {
+    //     Option::Some(0_usize)
+    // } else {
+    //     Option::None(())
+    // }
+
+    // [ Doesn't work ]
     if time_of_day < 22_usize {
         Option::Some(5_usize)
-    } else if time_of_day < 24_usize {
-        Option::Some(0_usize)
-    } else {
-        Option::None(())
     }
-
+    if time_of_day < 24_usize {
+        Option::Some(0_usize) 
+    }
+    Option::None(())
 }
 
 

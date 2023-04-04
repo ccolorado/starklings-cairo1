@@ -4,6 +4,8 @@
 // Make the code compile and the tests pass!
 // Execute `starklings hint structs3` or use the `hint` watch subcommand for a hint.
 
+// I AM NOT DONE
+
 use array::ArrayTrait;
 #[derive(Copy, Drop)]
 struct Package {
@@ -30,10 +32,17 @@ impl PackageImpl of PackageTrait {
     fn is_international(ref self: Package) -> bool
     {/// Something goes here...
 
-        if self.sender_country == self.recipient_country {
-            return false;
+        // [ doesn't work ] using return true; and return false works
+        if self.sender_country != self.recipient_country {
+            true
         }
-        return true;
+        false
+
+        // [ works ]
+        // if self.sender_country == self.recipient_country {
+        //     return false;
+        // }
+        // return true;
     }
 
     fn get_fees(ref self: Package, cents_per_gram: usize) -> usize
